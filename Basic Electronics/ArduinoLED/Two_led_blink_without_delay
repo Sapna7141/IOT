@@ -1,0 +1,43 @@
+
+const int led_pin1 = 13;
+const int led_pin2 = 12;
+
+int ledstate1 = LOW;
+int ledstate2 = LOW;
+
+unsigned long previousMillis = 0;
+unsigned long previousMillis1 = 0;
+
+const long interval = 500;
+const long interval1=700;
+
+void setup() {
+  pinMode(led_pin1, OUTPUT);
+  pinMode(led_pin2, OUTPUT);
+  
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= interval){
+    previousMillis = currentMillis;
+
+  if (currentMillis - previousMillis1 >= interval1){
+    previousMillis = currentMillis;  
+
+   if (ledstate1 == LOW){
+    ledstate1 = HIGH;
+    } else {
+      ledstate1 = LOW;
+      }
+    if (ledstate2 == LOW){
+    ledstate2 = HIGH;
+    } else {
+      ledstate2 = LOW;
+      }   
+     digitalWrite(led_pin1, ledstate1);
+     digitalWrite(led_pin2, ledstate2);
+  }
+  }
+ }
