@@ -1,0 +1,32 @@
+const int led[12] = {0,4,16,17,5,18,19,21,22,23};
+int a = 0,b =9;
+
+void setup() {
+  Serial.begin(9600);
+  for(int i=a; i<=b; i++){
+    pinMode(led[i],OUTPUT);
+    digitalWrite(led[i],LOW);
+    Serial.println(led[i]);
+    }
+}
+
+void loop() {
+  
+    for(int i=a; i<=b; i++){
+    digitalWrite(led[i],LOW);
+    delay(500);
+    for(int i=a; i<=b; i++){
+      digitalWrite(led[i],HIGH);
+      
+      }
+    }
+   for(int i=b; i>=a; i--){
+    digitalWrite(led[i],LOW);
+    delay(500);
+    for(int i=a; i<=b; i++){
+      digitalWrite(led[i],HIGH);
+      
+    }
+    }
+    
+   }
